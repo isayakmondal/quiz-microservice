@@ -1,4 +1,4 @@
-package com.sm.quiz.controllers;
+package com.sm.question.controllers;
 
 import java.util.List;
 
@@ -10,32 +10,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sm.quiz.entities.Quiz;
-import com.sm.quiz.servcies.QuizService;
+import com.sm.question.entities.Question;
+import com.sm.question.services.QuestionService;
 
 @RestController
-@RequestMapping("/quiz") 
-public class QuizController {
+@RequestMapping("/question")
+public class QuestionController {
 
 	@Autowired
-	private QuizService quizService;
-	
-	@PostMapping
-	public Quiz create(@RequestBody Quiz quiz) {
-		return quizService.add(quiz);
-	} 
-	
-	@GetMapping
-	public List<Quiz> getAll(){
-		return quizService.getAll();
-	}
-	
+	private QuestionService questionService;
+
 	@GetMapping("{id}")
-	public Quiz getOne(@PathVariable Long id) {
-		return quizService.get(id);
+	public Question get(@PathVariable Long id) {
+		return questionService.get(id);
 	}
 
-	
-	
+	@GetMapping
+	public List<Question> getAll() {
+		return questionService.getAll();
+	}
+
+	@PostMapping
+	public Question add(@RequestBody Question question) {
+		return questionService.add(question);
+	}
 
 }

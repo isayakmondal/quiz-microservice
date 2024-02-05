@@ -1,4 +1,4 @@
-package com.sm.quiz.entities;
+package com.sm.question.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,10 +14,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Quiz {
+public class Question {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String title;
+	private Long questionId;
+	private String question;
+	private Long quizId;
 }

@@ -11,6 +11,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+.DS_Store
 
 # External tool builders
 .externalToolBuilders/
@@ -65,3 +66,6 @@ local.properties
 # Spring Boot Tooling
 .sts4-cache/
 
+
+
+/postgres_questions_db
